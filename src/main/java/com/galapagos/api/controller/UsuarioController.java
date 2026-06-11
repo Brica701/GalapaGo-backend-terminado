@@ -12,7 +12,10 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/usuarios")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {
+        "http://localhost:4200",
+        "https://galapa-go-frontend-terminado.vercel.app"
+})
 public class UsuarioController {
 
     @Autowired

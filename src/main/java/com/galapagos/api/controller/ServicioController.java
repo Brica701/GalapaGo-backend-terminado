@@ -10,7 +10,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/servicios")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {
+        "http://localhost:4200",
+        "https://galapa-go-frontend-terminado.vercel.app"
+})
 public class ServicioController {
 
     @Autowired

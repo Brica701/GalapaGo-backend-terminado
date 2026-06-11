@@ -12,7 +12,10 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/comentarios")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {
+        "http://localhost:4200",
+        "https://galapa-go-frontend-terminado.vercel.app"
+})
 public class ComentarioController {
 
     @Autowired
