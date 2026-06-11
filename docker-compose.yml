@@ -1,0 +1,20 @@
+services:
+  db:
+    image: mariadb:latest
+    container_name: mariadb_server
+    environment:
+      MARIADB_ROOT_PASSWORD: secret
+      MARIADB_DATABASE: mi_proyecto
+    ports:
+      - "3306:3306"
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin_web
+    environment:
+      PMA_HOST: db
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
