@@ -23,6 +23,7 @@ public interface ReservaRepository extends JpaRepository<Reserva, Long> {
             "WHERE r.habitacion.id = :habitacionId " +
             "AND r.estado = 'CONFIRMADA' " +
             "AND (:fechaInicio < r.fechaFin AND :fechaFin > r.fechaInicio)")
+
     Integer contarHabitacionesReservadasEnFechas(
             @Param("habitacionId") Long habitacionId,
             @Param("fechaInicio") LocalDate fechaInicio,

@@ -104,7 +104,6 @@ public class ServicioService {
         }).orElseThrow(() -> new RuntimeException("No se pudo actualizar: el ID " + id + " no existe."));
     }
 
-    // Este método ya no es estrictamente necesario si simplificamos "listarTodos"
     public List<Servicio> listarTodoSinPaginacion() {
         return servicioRepository.findAllByOrderByIdDesc();
     }
