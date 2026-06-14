@@ -31,17 +31,14 @@ public class Reserva {
     @JoinColumn(name = "habitacion_id")
     private Habitacion habitacion;
 
-    @NotNull(message = "La fecha de inicio es obligatoria")
-    @FutureOrPresent(message = "La fecha de inicio no puede ser en el pasado")
+
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate fechaInicio;
 
-    @NotNull(message = "La fecha de fin es obligatoria")
-    @FutureOrPresent(message = "La fecha de fin no puede ser en el pasado")
+
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate fechaFin;
 
-    @Min(value = 1, message = "Debe haber al menos 1 persona")
     private Integer cantidadPersonas;
     private Integer cantidadHabitaciones;
     private Double precioTotal;
