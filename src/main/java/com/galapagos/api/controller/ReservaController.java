@@ -2,6 +2,7 @@ package com.galapagos.api.controller;
 
 import com.galapagos.api.model.Reserva;
 import com.galapagos.api.service.ReservaService;
+import jakarta.validation.Valid; // Asegúrate de importar esto
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +37,7 @@ public class ReservaController {
     }
 
     @PostMapping
-    public ResponseEntity<?> guardar(@RequestBody Reserva reserva) {
+    public ResponseEntity<?> guardar(@Valid @RequestBody Reserva reserva) {
         try {
             Reserva nuevaReserva = reservaService.crearReserva(reserva);
             return ResponseEntity.ok(nuevaReserva);
